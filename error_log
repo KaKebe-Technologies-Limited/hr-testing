@@ -1,0 +1,2 @@
+[22-Jun-2022 23:44:41 Africa/Nairobi] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 141324544 bytes) in /home1/rgxszumy/public_html/HRM-KaKebe/system/Images/Handlers/GDHandler.php on line 416
+[22-Jun-2022 23:57:30 Africa/Nairobi] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 141324544 bytes) in /home1/rgxszumy/public_html/HRM-KaKebe/system/Images/Handlers/GDHandler.php on line 416
