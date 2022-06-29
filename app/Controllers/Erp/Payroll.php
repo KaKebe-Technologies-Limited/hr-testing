@@ -397,7 +397,9 @@ class Payroll extends BaseController
             }
 
             // net salary
-            $inet_salary = $ibasic_salary + $allowance_amount + $commissions_amount + $other_payments_amount - $statutory_deductions_amount + $deduct_salary + $lo_deduct_salary;
+//            $inet_salary = $ibasic_salary + $allowance_amount + $commissions_amount + $other_payments_amount - $statutory_deductions_amount + $deduct_salary + $lo_deduct_salary;
+            $inet_salary = $ibasic_salary + $allowance_amount + $commissions_amount + $other_payments_amount - $statutory_deductions_amount + $deduct_salary + $lo_deduct_salary - $ipaye_salary - $inssf_salary;
+
             $net_salary = '<h6 class="text-success">' . number_to_currency($inet_salary, $xin_system['default_currency'], null, 2) . '</h6>';
             $basic_salary = '<h6 class="text-primary">' . number_to_currency($ibasic_salary, $xin_system['default_currency'], null, 2) . '</h6>';
             $paye_salary = '<h6 class="text-primary">' . number_to_currency($ipaye_salary, $xin_system['default_currency'], null, 2) . '</h6>';
