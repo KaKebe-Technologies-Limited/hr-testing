@@ -590,10 +590,10 @@ class Employees extends BaseController {
 						'required' => lang('Employees.xin_employee_error_employee_id'),
 					],
                     'employee_nssf_id' => [
-                        'required' => lang('Employees.xin_employee_error_employee_id'),
+                        'required' => lang('Employees.xin_employee_error_employee_nssf_id'),
                     ],
                     'employee_tin_id' => [
-                        'required' => lang('Employees.xin_employee_error_employee_id'),
+                        'required' => lang('Employees.xin_employee_error_employee_tin_id'),
                     ],
 					'office_shift_id' => [
 						'required' => lang('Employees.xin_office_shift_field_error'),
