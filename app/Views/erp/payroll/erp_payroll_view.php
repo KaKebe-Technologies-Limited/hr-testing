@@ -147,6 +147,14 @@ $ci_erp_settings = $SystemModel->where('setting_id', 1)->first();
                         <td class="text-success"><?php echo lang('Employees.xin_basic_salary');?></td>
                         <td class="text-success"><?= number_to_currency($payslip_data['basic_salary'], $xin_system['default_currency'],null,2);?></td>
                       </tr>
+                      <tr>
+                          <td class="text-success"><?php echo lang('Employees.xin_basic_salary');?></td>
+                          <td class="text-success"><?= number_to_currency($payslip_data['basic_salary'], $xin_system['default_currency'],null,2);?></td>
+                      </tr>
+                      <tr>
+                          <td class="text-success"><?php echo lang('Employees.xin_basic_salary');?></td>
+                          <td class="text-success"><?= number_to_currency($payslip_data['basic_salary'], $xin_system['default_currency'],null,2);?></td>
+                      </tr>
                       <?php $allowance_amount =0; if($count_pay_allowance > 0) { ?>
                       <?php foreach($pay_allowance as $_allowance):?>
                       <?php
