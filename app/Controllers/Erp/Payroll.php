@@ -688,6 +688,7 @@ class Payroll extends BaseController
             $smonth = strtotime($r['salary_month']);
             $smonth = date('F, Y', $smonth);
             $salary_month = set_date_format($r['salary_month']);
+            $salary_date = set_date_format($r['year_to_date']);
             $net_salary = '<h6 class="text-success">' . number_to_currency($inet_salary, $xin_system['default_currency'], null, 2) . '</h6>';
             $combhr = $view;
             $links = '
@@ -700,7 +701,7 @@ class Payroll extends BaseController
                 $links,
                 $net_salary,
                 $smonth,
-                $net_salary
+                $salary_date
             );
         }
         $output = array(
