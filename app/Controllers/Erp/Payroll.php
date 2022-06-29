@@ -683,11 +683,8 @@ class Payroll extends BaseController
 				</div>';
             // Salary Options //
             $view = '<span data-toggle="tooltip" data-placement="top" data-state="primary" title="' . lang('Payroll.xin_view_payslip') . '"><a target="_blank" href="' . site_url('erp/payroll-view') . '/' . uencode($r['payslip_id']) . '"><button type="button" class="btn icon-btn btn-sm btn-light-primary waves-effect waves-light"><i class="feather icon-arrow-right"></i></button></a></span>';
-
-            $ipaye_salary = $user_detail['basic_salary'] * $this->paye_percent;
-            $inssf_salary = $user_detail['basic_salary'] * $this->nssf_percent;
             // net salary
-            $inet_salary = $r['net_salary'] - $ipaye_salary - $inssf_salary;
+            $inet_salary = $r['net_salary'];
             $smonth = strtotime($r['salary_month']);
             $smonth = date('F, Y', $smonth);
             $salary_month = set_date_format($r['salary_month']);
