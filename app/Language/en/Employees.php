@@ -2,7 +2,9 @@
 // override core en language system validation or define your own en language validation message
 return [
 	'dashboard_employee_id' => 'Employee ID',
-	'xin_employee_office_shift' => "Office Shift",
+    'dashboard_employee_nssf_id' => 'Nssf No',
+    'dashboard_employee_tin_id' => 'Tin No',
+    'xin_employee_office_shift' => "Office Shift",
 	'xin_employee_office_shifts' => "Office Shifts",
 	'xin_reports_to' => 'Reports To',
 	'xin_hr_leave_cat' => 'Leave Category',

@@ -129,6 +129,24 @@ $get_animate='';
                   <input class="form-control" placeholder="<?= lang('Employees.dashboard_employee_id');?>" name="employee_id" type="text" value="<?php echo $employee_id;?>">
                 </div>
               </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="employee_id">
+                            <?= lang('Employees.dashboard_employee_nssf_id');?>
+                        </label>
+                        <span class="text-danger">*</span>
+                        <input class="form-control" placeholder="<?= lang('Employees.dashboard_employee_nssf_id');?>" name="employee_nssf_id" type="text">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="employee_id">
+                            <?= lang('Employees.dashboard_employee_tin_id');?>
+                        </label>
+                        <span class="text-danger">*</span>
+                        <input class="form-control" placeholder="<?= lang('Employees.dashboard_employee_tin_id');?>" name="employee_tin_id" type="text">
+                    </div>
+                </div>
               <div class="col-md-4">
                 <div class="form-group">
                   <label for="contact_number">
