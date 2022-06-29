@@ -131,7 +131,7 @@ $locale = service('request')->getLocale();
               <th><?= lang('Employees.xin_paye');?></th>
               <th><?= lang('Employees.xin_nssf');?></th>
             <th><?= lang('Employees.xin_payroll_net_salary');?></th>
-<!--            <th>--><?//= lang('Main.dashboard_xin_status');?><!--</th>-->
+            <th><?= lang('Main.dashboard_xin_status');?></th>
           </tr>
         </thead>
       </table>

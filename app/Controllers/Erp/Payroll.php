@@ -421,7 +421,7 @@ class Payroll extends BaseController
                 $paye_salary,
                 $nssf_salary,
                 $net_salary,
-//                $status
+                $status
             );
         }
         $output = array(
