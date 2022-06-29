@@ -565,6 +565,8 @@ class Employees extends BaseController {
 			$validation->setRules([
 					'first_name' => 'required',
 					'last_name' => 'required',
+                    'employee_nssf_id' => 'required',
+                    'employee_tin_id' => 'required',
 					'employee_id' => 'required',
 					'office_shift_id' => 'required',
 					'email' => 'required|valid_email|is_unique[ci_erp_users.email]',
@@ -587,6 +589,12 @@ class Employees extends BaseController {
 					'employee_id' => [
 						'required' => lang('Employees.xin_employee_error_employee_id'),
 					],
+                    'employee_nssf_id' => [
+                        'required' => lang('Employees.xin_employee_error_employee_id'),
+                    ],
+                    'employee_tin_id' => [
+                        'required' => lang('Employees.xin_employee_error_employee_id'),
+                    ],
 					'office_shift_id' => [
 						'required' => lang('Employees.xin_office_shift_field_error'),
 					],
@@ -633,7 +641,11 @@ class Employees extends BaseController {
 				$Return['error'] = $validation->getError('last_name');
 			} elseif($validation->hasError('employee_id')) {
 				$Return['error'] = $validation->getError('employee_id');
-			} elseif($validation->hasError('office_shift_id')) {
+			} elseif($validation->hasError('employee_nssf_id')) {
+                $Return['error'] = $validation->getError('employee_nssf_id');
+            }elseif($validation->hasError('employee_tin_id')) {
+                $Return['error'] = $validation->getError('employee_tin_id');
+            } elseif($validation->hasError('office_shift_id')) {
 				$Return['error'] = $validation->getError('office_shift_id');
 			} elseif($validation->hasError('email')){
 				$Return['error'] = $validation->getError('email');
@@ -685,7 +697,9 @@ class Employees extends BaseController {
 			$username = $this->request->getPost('username',FILTER_SANITIZE_STRING);
 			$password = $this->request->getPost('password',FILTER_SANITIZE_STRING);
 			$contact_number = $this->request->getPost('contact_number',FILTER_SANITIZE_STRING);
-			$employee_id = $this->request->getPost('employee_id',FILTER_SANITIZE_STRING);
+            $employee_id = $this->request->getPost('employee_id',FILTER_SANITIZE_STRING);
+            $employee_nssf_id = $this->request->getPost('employee_nssf_id',FILTER_SANITIZE_STRING);
+            $employee_tin_id = $this->request->getPost('employee_tin_id',FILTER_SANITIZE_STRING);
 			$role = $this->request->getPost('role',FILTER_SANITIZE_STRING);
 			$gender = $this->request->getPost('gender',FILTER_SANITIZE_STRING);
 			$office_shift_id = $this->request->getPost('office_shift_id',FILTER_SANITIZE_STRING);
@@ -737,6 +751,8 @@ class Employees extends BaseController {
 			$data2 = [
 				'user_id' => $user_id,
 				'employee_id'  => $employee_id,
+                'employee_nssf_id'  => $employee_nssf_id,
+                'employee_tin_id'  => $employee_tin_id,
 				'department_id'  => $department_id,
 				'designation_id'  => $designation_id,
 				'office_shift_id' => $office_shift_id,
