@@ -412,13 +412,13 @@ class Payroll extends BaseController
 				';
             $data[] = array(
                 $links,
-                $user_detail['employee_id'],
+//                $user_detail['employee_id'],
                 $wages_type,
                 $basic_salary,
                 $paye_salary,
                 $nssf_salary,
                 $net_salary,
-                $status
+//                $status
             );
         }
         $output = array(
