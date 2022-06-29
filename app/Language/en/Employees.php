@@ -175,6 +175,8 @@ return [
 	'xin_visit_purpose' => 'Visit Purpose',
 	'xin_visit_place' => 'Place of Visit',
 	'xin_travel_mode' => 'Travel Mode',
+    'xin_nssf_no' => 'NSSF NO',
+    'xin_tin_no' => 'Tin NO',
 	'xin_by_bus' => 'By Bus',
 	'xin_by_train' => 'By Train',
 	'xin_by_plane' => 'By Plane',

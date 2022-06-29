@@ -413,6 +413,8 @@ class Payroll extends BaseController
             $data[] = array(
                 $links,
 //                $user_detail['employee_id'],
+                2222,
+                3333,
                 $wages_type,
                 $basic_salary,
                 $paye_salary,

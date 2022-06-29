@@ -124,6 +124,8 @@ $locale = service('request')->getLocale();
           <tr>
             <th><?= lang('Dashboard.dashboard_employee');?></th>
 <!--            <th>--><?//= lang('Employees.dashboard_employee_id');?><!--</th>-->
+              <th><?= lang('Employees.xin_nssf_no');?></th>
+              <th><?= lang('Employees.xin_tin_no');?></th>
             <th><?= lang('Employees.xin_employee_type_wages');?></th>
             <th><?= lang('Employees.xin_basic_salary');?></th>
               <th><?= lang('Employees.xin_paye');?></th>
