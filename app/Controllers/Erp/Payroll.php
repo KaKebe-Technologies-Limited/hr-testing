@@ -335,7 +335,8 @@ class Payroll extends BaseController
             $user_detail = $StaffdetailsModel->where('user_id', $r['user_id'])->first();
             $wages_type = lang('Membership.xin_per_month');
             $ibasic_salary = $user_detail['basic_salary'];
-            $ipaye_salary = $user_detail['basic_salary'];
+            $ipaye_salary = $user_detail['basic_salary'] - 20;
+            $inssf_salary = $user_detail['basic_salary'] - 10;
             $name = $r['first_name'] . ' ' . $r['last_name'];
             $uname = '<div class="d-inline-block align-middle">
 					<img src="' . base_url() . '/public/uploads/users/thumb/' . $r['profile_photo'] . '" alt="user image" class="img-radius align-top m-r-15" style="width:40px;">
@@ -395,7 +396,7 @@ class Payroll extends BaseController
             $net_salary = '<h6 class="text-success">' . number_to_currency($inet_salary, $xin_system['default_currency'], null, 2) . '</h6>';
             $basic_salary = '<h6 class="text-primary">' . number_to_currency($ibasic_salary, $xin_system['default_currency'], null, 2) . '</h6>';
             $paye_salary = '<h6 class="text-primary">' . number_to_currency($ipaye_salary, $xin_system['default_currency'], null, 2) . '</h6>';
-            $nssf_salary = '<h6 class="text-primary">' . number_to_currency($ipaye_salary, $xin_system['default_currency'], null, 2) . '</h6>';
+            $nssf_salary = '<h6 class="text-primary">' . number_to_currency($inssf_salary, $xin_system['default_currency'], null, 2) . '</h6>';
             $links = '
 					' . $uname . '
 					<div class="overlay-edit">
