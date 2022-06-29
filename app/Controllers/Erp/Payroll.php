@@ -335,8 +335,13 @@ class Payroll extends BaseController
             $user_detail = $StaffdetailsModel->where('user_id', $r['user_id'])->first();
             $wages_type = lang('Membership.xin_per_month');
             $ibasic_salary = $user_detail['basic_salary'];
-            $ipaye_salary = $user_detail['basic_salary'] - 20;
-            $inssf_salary = $user_detail['basic_salary'] - 10;
+
+            // Calculating PAYE & NSSF
+            $nssf_percent = 0.05;
+            $paye_percent = 0.1;
+            $ipaye_salary = $user_detail['basic_salary'] * $paye_percent;
+            $inssf_salary = $user_detail['basic_salary'] * $nssf_percent;
+
             $name = $r['first_name'] . ' ' . $r['last_name'];
             $uname = '<div class="d-inline-block align-middle">
 					<img src="' . base_url() . '/public/uploads/users/thumb/' . $r['profile_photo'] . '" alt="user image" class="img-radius align-top m-r-15" style="width:40px;">
