@@ -40,6 +40,9 @@ use App\Models\PaystatutorydeductionsModel;
 class Payroll extends BaseController
 {
 
+    public $nssf_percent = 0.05;
+    public $paye_percent = 0.1;
+
     public function index()
     {
         $RolesModel = new RolesModel();
@@ -337,10 +340,8 @@ class Payroll extends BaseController
             $ibasic_salary = $user_detail['basic_salary'];
 
             // Calculating PAYE & NSSF
-            $nssf_percent = 0.05;
-            $paye_percent = 0.1;
-            $ipaye_salary = $user_detail['basic_salary'] * $paye_percent;
-            $inssf_salary = $user_detail['basic_salary'] * $nssf_percent;
+            $ipaye_salary = $user_detail['basic_salary'] * $this->paye_percent;
+            $inssf_salary = $user_detail['basic_salary'] * $this->nssf_percent;
 
             $name = $r['first_name'] . ' ' . $r['last_name'];
             $uname = '<div class="d-inline-block align-middle">
@@ -683,8 +684,10 @@ class Payroll extends BaseController
             // Salary Options //
             $view = '<span data-toggle="tooltip" data-placement="top" data-state="primary" title="' . lang('Payroll.xin_view_payslip') . '"><a target="_blank" href="' . site_url('erp/payroll-view') . '/' . uencode($r['payslip_id']) . '"><button type="button" class="btn icon-btn btn-sm btn-light-primary waves-effect waves-light"><i class="feather icon-arrow-right"></i></button></a></span>';
 
+            $ipaye_salary = $user_detail['basic_salary'] * $this->paye_percent;
+            $inssf_salary = $user_detail['basic_salary'] * $this->nssf_percent;
             // net salary
-            $inet_salary = $r['net_salary'];
+            $inet_salary = $r['net_salary'] - $ipaye_salary - $inssf_salary;
             $smonth = strtotime($r['salary_month']);
             $smonth = date('F, Y', $smonth);
             $salary_month = set_date_format($r['salary_month']);
@@ -1320,7 +1323,9 @@ class Payroll extends BaseController
             $user_detail = $StaffdetailsModel->where('user_id', $id)->first();
             $ibasic_salary = $user_detail['basic_salary'];
             // net salary
-            $inet_salary = $ibasic_salary + $allowance_amount + $commissions_amount + $other_payments_amount - $statutory_deductions_amount;
+            $ipaye_salary = $user_detail['basic_salary'] * $this->paye_percent;
+            $inssf_salary = $user_detail['basic_salary'] * $this->nssf_percent;
+            $inet_salary = $ibasic_salary + $allowance_amount + $commissions_amount + $other_payments_amount - $statutory_deductions_amount - $ipaye_salary - $inssf_salary;
             // add info
             $payslip_comments = $this->request->getPost('payslip_comments', FILTER_SANITIZE_STRING);
             $data = [
