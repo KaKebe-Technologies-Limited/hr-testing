@@ -103,6 +103,8 @@ return [
 	'xin_edit_documents' => 'Edit Document',
 	'xin_contract_date' => 'Contract Date',
 	'xin_basic_salary' => 'Basic Salary',
+    'xin_paye' => 'PAYE (10%)',
+    'xin_nssf' => 'NSSF (5%)',
 	'xin_gross_salary' => 'Gross Salary',
 	'xin_hourly_rate' => 'Hourly Rate',
 	'xin_contract_end' => 'Contract End',
